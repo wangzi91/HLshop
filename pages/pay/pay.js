@@ -11,6 +11,7 @@ Page({
     image: "",
     price: "",
     value: "",
+    total:""
   },
 
   /**
@@ -32,6 +33,33 @@ Page({
     })
 
   },
+  add: function (e) {
+    var value = this.data.value  //获取购物车里面的value值
+
+    value++
+
+    this.setData({
+      value: value
+    });
+    this.getsumTotal();
+  },
+
+  //减
+  reduce: function (e) {
+    var value = this.data.value  //获取购物车里面的value值
+
+    if (value == 1) {
+      value--
+      this.data.value.value = 1
+    } else {
+      value--
+      this.data.value = value;
+    }
+    this.setData({
+      value: value
+    });
+    this.getsumTotal();
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -52,6 +80,7 @@ Page({
     //   // showcart:false
     // })
     // console.log(cartItems)
+    this.getsumTotal();
   },
 
   /**
@@ -87,5 +116,13 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  getsumTotal: function () {
+    var sum = this.data.value * this.data.price
+  
+    //更新数据
+    this.setData({
+      total: sum
+    })
+  },
 })
