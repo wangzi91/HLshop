@@ -4,7 +4,8 @@
     "pages/carts/carts",
     "pages/classify/classify",
     "pages/logs/logs",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",

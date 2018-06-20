@@ -1,0 +1,7 @@
+<!--pages/pay/pay.wxml-->
+<text>pages/pay/pay.wxml</text>
+
+<view>{{title}}</view>
+<view><image src='{{image}}'></image></view>
+<view>{{price}}</view>
+

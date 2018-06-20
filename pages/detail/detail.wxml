@@ -7,4 +7,5 @@
       <text class="input cart-text">{{value}}</text>
       <text bindtap='add' data-index="{{index}}">+</text>
 <view><button bindtap="addcart">添加到购物车</button></view>
+<view><navigator url="../pay/pay?fid={{id}}&ftitle={{title}}&fimg={{image}}&fprice={{price}}&fvalue={{value}}"><button>立刻购买</button></navigator></view>
 <view></view>
