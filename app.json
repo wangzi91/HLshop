@@ -5,7 +5,8 @@
     "pages/classify/classify",
     "pages/logs/logs",
     "pages/detail/detail",
-    "pages/pay/pay"
+    "pages/pay/pay",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,6 +27,11 @@
       {
         "pagePath": "pages/carts/carts",
         "text": "购物车"
+      }
+      ,
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的"
       }
     ]
   }

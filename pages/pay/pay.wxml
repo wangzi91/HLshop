@@ -2,11 +2,12 @@
 <text>pages/pay/pay.wxml</text>
 
 <view>{{title}}</view>
-<view><image src='{{image}}'></image></view>
+<view>
+  <image src='{{image}}'></image>
+</view>
 <view>{{price}}</view>
-        <text bindtap='reduce' data-index="{{index}}">-</text>
-        <text class="input cart-text">{{value}}</text>
-        <text bindtap='add' data-index="{{index}}">+</text>
-        <view>总价：￥{{total}}</view>
+<text bindtap='reduce' data-index="{{index}}">-</text>
+<text class="input cart-text">{{value}}</text>
+<text bindtap='add' data-index="{{index}}">+</text>
+<view>总价：￥{{total}}</view>
 <button>微信支付</button>
-
