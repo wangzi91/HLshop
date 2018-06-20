@@ -1,6 +1,6 @@
 <!--pages/carts/carts.wxml-->
-<view wx:if="{{cartList}}">
-购物车为空
+<view wx:if="{{cartList}}" class='stylecart'>
+  购物车为空
 </view>
 <view class="container">
   <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{cartItems}}" wx:key="">
@@ -12,24 +12,26 @@
       <view class='c-img'>
         <image src='{{item.image}}'></image>
       </view>
-      <view>{{item.title}}</view>
 
-      <text bindtap='reduce' data-index="{{index}}">-</text>
-      <text class="input cart-text">{{item.value}}</text>
-      <text bindtap='add' data-index="{{index}}">+</text>
+      <view>
+        <view>{{item.title}}</view>
+        <text bindtap='reduce' data-index="{{index}}">-</text>
+        <text class="input cart-text">{{item.value}}</text>
+        <text bindtap='add' data-index="{{index}}">+</text>
+      </view>
       <view>{{item.price}}</view>
     </view>
     <view class="del" catchtap="del" data-index="{{index}}">删除</view>
   </view>
 </view>
 
-<view class="cart-bottom">
+<view class="cart-bottom" wx:if="{{showtot}}" >
   <icon wx:if="{{CheckAll}}" class="cart-icon" type="success" color="#3385ff" size="20" bindtap="select" data-index="{{index}}" />
   <icon wx:else type="circle" class="cart-icon" size="20" bindtap="select" data-index="{{index}}" />
   <text class='checkAll'>全选</text>
 
   <view class='cart-pay'>
-    <text class='cart_pay'  data-id="{{item.id}}">付款</text>
+    <text class='cart_pay' data-id="{{item.id}}">付款</text>
   </view>
 
   <view class='cart-sum'>

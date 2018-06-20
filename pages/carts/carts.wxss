@@ -1,8 +1,10 @@
 /* pages/carts/carts.wxss */
-page {
-  background-color: white;
-}
 
+.stylecart{
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
 .container {
   min-height: 100%;
   padding: 20rpx 0rpx;
@@ -14,7 +16,8 @@ page {
  justify-content: space-between;
  border-bottom:1px solid #ccc;
  width: 100%;
- overflow: hidden
+ overflow: hidden;
+ background-color: white
 }
 .content {
  width: 100%;

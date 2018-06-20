@@ -3,7 +3,8 @@ Page({
     cartItems: [],
     startX: 0, //开始坐标
     startY: 0,
-    showcart:true
+    showcart:true,
+    showtot:false
   },
   //选择
   select: function (e) {
@@ -157,6 +158,7 @@ Page({
         cartList: true,
         // cartItems: cartItems,
         // // showcart:false
+        showtot: false
       })
     }
     // if (cartItems.length) {
@@ -181,6 +183,7 @@ Page({
          cartList: false,
         // cartItems: cartItems,
         // // showcart:false
+         showtot: true
       })
     }
 
@@ -190,6 +193,7 @@ Page({
         cartList: true,
         // cartItems: cartItems,
         // // showcart:false
+        showtot:false
       })
     }
 
