@@ -1,0 +1,10 @@
+<!--pages/detail/detail.wxml-->
+<text>pages/detail/detail.wxml</text>
+<view>{{title}}</view>
+<view><image src='{{image}}'></image></view>
+<view>{{price}}</view>
+      <text bindtap='reduce' data-index="{{index}}">-</text>
+      <text class="input cart-text">{{value}}</text>
+      <text bindtap='add' data-index="{{index}}">+</text>
+<view><button bindtap="addcart">添加到购物车</button></view>
+<view></view>
