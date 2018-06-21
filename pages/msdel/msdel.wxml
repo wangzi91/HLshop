@@ -1,10 +1,10 @@
 <!--pages/msdel/msdel.wxml-->
 <button bindtap='goasc'>价格升序</button>
 <button bindtap='godesc'>价格降序</button>
-<view wx:for="{{xsmscon}}">
+<view wx:for="{{xsmscon}}" class='ms-con'>
 <navigator url="../detail/detail?fid={{item.id}}&fimg={{item.image}}&ftitle={{item.title}}&fprice={{item.price}}&fvalue={{item.value}}">
   <view>{{item.title}}</view>
-  <view><image src='{{item.image}}'></image></view>
-  <view>{{item.price}}</view>
+  <view class='ms-img'><image src='{{item.image}}'></image></view>
+  <view>价格：{{item.price}}</view>
   </navigator>
 </view>

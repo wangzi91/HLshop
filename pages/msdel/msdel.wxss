@@ -1,1 +1,14 @@
 /* pages/msdel/msdel.wxss */
+.ms-img{
+  width: 200rpx;
+  height: 200rpx;
+}
+.ms-img image{
+  width: 100%;
+  height: 100%
+}
+.ms-con{
+ border: 2rpx solid #e8e8e8;
+ background-color: white;
+ margin-top: 20rpx
+}
