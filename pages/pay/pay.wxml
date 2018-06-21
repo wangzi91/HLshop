@@ -1,5 +1,5 @@
 <!--pages/pay/pay.wxml-->
-<text>pages/pay/pay.wxml</text>
+
 
  <view>{{title}}</view>
 <view>

@@ -1,5 +1,5 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+
 <view>{{title}}</view>
 <view>
   <image src='{{image}}'></image>
