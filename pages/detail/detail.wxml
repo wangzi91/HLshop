@@ -14,8 +14,9 @@
     <text bindtap="addcart" class='text'>添加到购物车</text>
   </view>
   <view class='right'>
-    <navigator url="../pay/pay?fid={{id}}&ftitle={{title}}&fimg={{image}}&fprice={{price}}&fvalue={{value}}">
+     <navigator url="../pay/pay?fid={{id}}&ftitle={{title}}&fimg={{image}}&fprice={{price}}&fvalue={{value}}">
       <text class='text'>立刻购买</text>
-    </navigator>
+    </navigator> 
+    <!-- <text class='text' bindtap="gopay">立刻购买</text> -->
   </view>
 </view>

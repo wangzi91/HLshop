@@ -1,12 +1,16 @@
 {
   "pages": [
+    
     "pages/index/index",
     "pages/carts/carts",
     "pages/classify/classify",
     "pages/logs/logs",
     "pages/detail/detail",
     "pages/pay/pay",
+    "pages/msdel/msdel",
     "pages/user/user"
+    
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

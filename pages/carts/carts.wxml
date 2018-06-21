@@ -25,7 +25,7 @@
   </view>
 </view>
 
-<view class="cart-bottom" wx:if="{{showtot}}" >
+<view class="cart-bottom" wx:if="{{showtot}}">
   <icon wx:if="{{CheckAll}}" class="cart-icon" type="success" color="#3385ff" size="20" bindtap="select" data-index="{{index}}" />
   <icon wx:else type="circle" class="cart-icon" size="20" bindtap="select" data-index="{{index}}" />
   <text class='checkAll'>全选</text>

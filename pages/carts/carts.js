@@ -177,6 +177,7 @@ Page({
       cartItems: cartItems,
       // showcart:false
     })
+    console.log(this.data.cartItems)
     if (cartItems.length >= 1) {
      
       this.setData({

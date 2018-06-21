@@ -1,7 +1,7 @@
 <!--pages/pay/pay.wxml-->
 <text>pages/pay/pay.wxml</text>
 
-<view>{{title}}</view>
+ <view>{{title}}</view>
 <view>
   <image src='{{image}}'></image>
 </view>
@@ -10,4 +10,8 @@
 <text class="input cart-text">{{value}}</text>
 <text bindtap='add' data-index="{{index}}">+</text>
 <view>总价：￥{{total}}</view>
-<button>微信支付</button>
+<button>微信支付</button> 
+
+<!-- <view wx:for="{{cartItems}}">
+  {{item.title}}
+</view> -->

@@ -41,17 +41,20 @@ Page({
   onReady: function () {
   
   },
-  // gopay:function(e){
-  //   wx.navigateTo({
-  //     url: '../pay/pay'
-  //   })
-  //   var cart = [id:this.data.title, this.data.fimg]
-  //   wx.setStorage({
-  //     key: "pay",
-  //     data: cart
-  //   })
+  gopay:function(e){
+    wx.navigateTo({
+      url: '../pay/pay'
+    })
+    var cart = {
+      id:this.data.id,
+      title:this.data.title
+    }
+    wx.setStorage({
+      key: "pay",
+      data: cart
+    })
     
-  // },
+  },
 
   addcart: function (e) {
     var that = this

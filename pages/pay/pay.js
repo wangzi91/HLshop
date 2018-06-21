@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cartItems: [],
+    cartItems:[],
     id: "",
     title: "",
     image: "",
@@ -73,14 +73,15 @@ Page({
    */
   onShow: function () {
      
-    // console.log(wx.getStorageSync("pay"))
+    // var pay = wx.getStorageSync("pay")
+    // console.log(pay)
     // this.setData({
     //   // cartList: false,
-    //   cartItems: cartItems,
+    //   cartItems:pay,
     //   // showcart:false
     // })
-    // console.log(cartItems)
-    this.getsumTotal();
+    // console.log(this.data.cartItems)
+     this.getsumTotal();
   },
 
   /**

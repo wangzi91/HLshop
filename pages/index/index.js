@@ -489,7 +489,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    // console.log(this.data.content)
+    wx.setStorage({
+      key: 'miaosha',
+      data: this.data.content,
+    })
+  },
+  goxsms:function(){
+    wx.navigateTo({
+      url: '../msdel/msdel',
+    })
   },
 
   /**
