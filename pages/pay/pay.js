@@ -6,11 +6,6 @@ Page({
    */
   data: {
     cartItems:[],
-    id: "",
-    title: "",
-    image: "",
-    price: "",
-    value: "",
     total:""
   },
 
@@ -18,45 +13,45 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.fid)
-    console.log(options.ftitle)
-    console.log(options.fimg)
-    console.log(options.fprice)
-    console.log(options.fvalue)
+    // console.log(options.fid)
+    // console.log(options.ftitle)
+    // console.log(options.fimg)
+    // console.log(options.fprice)
+    // console.log(options.fvalue)
 
-    this.setData({
-      id: options.fid,
-      title: options.ftitle,
-      image: options.fimg,
-      price: options.fprice,
-      value: options.fvalue,
-    })
+    // this.setData({
+    //   id: options.fid,
+    //   title: options.ftitle,
+    //   image: options.fimg,
+    //   price: options.fprice,
+    //   value: options.fvalue,
+    // })
 
   },
   add: function (e) {
-    var value = this.data.value  //获取购物车里面的value值
-
+    var cartItems = this.data.cartItems   //获取购物车列表
+    var value = this.data.cartItems.value
     value++
-
+    cartItems.value = value
     this.setData({
-      value: value
-    });
+      cartItems: cartItems
+    })
     this.getsumTotal();
   },
 
   //减
   reduce: function (e) {
-    var value = this.data.value  //获取购物车里面的value值
-
+    var cartItems = this.data.cartItems  //获取购物车列表
+    var value = cartItems.value  //获取购物车里面的value值
     if (value == 1) {
       value--
-      this.data.value.value = 1
+      cartItems.value = 1
     } else {
       value--
-      this.data.value = value;
+      cartItems.value = value;
     }
     this.setData({
-      value: value
+      cartItems: cartItems
     });
     this.getsumTotal();
   },
@@ -73,14 +68,14 @@ Page({
    */
   onShow: function () {
      
-    // var pay = wx.getStorageSync("pay")
-    // console.log(pay)
-    // this.setData({
-    //   // cartList: false,
-    //   cartItems:pay,
-    //   // showcart:false
-    // })
-    // console.log(this.data.cartItems)
+     var pay = wx.getStorageSync("newcate")
+
+    this.setData({
+      // cartList: false,
+      cartItems:pay,
+      // showcart:false
+    })
+    console.log(this.data.cartItems)
      this.getsumTotal();
   },
 
@@ -119,8 +114,9 @@ Page({
   
   },
   getsumTotal: function () {
-    var sum = this.data.value * this.data.price
-  
+   
+    var sum = this.data.cartItems.value * this.data.cartItems.price
+    console.log(sum)
     //更新数据
     this.setData({
       total: sum

@@ -1,22 +1,36 @@
 <!--pages/detail/detail.wxml-->
-
-<view>{{title}}</view>
 <view>
-  <image src='{{image}}'></image>
+  {{cartItems.title}}
 </view>
-<view>价格：{{price}}</view>数量：
+<view>
+  <image src='{{cartItems.image}}'></image>
+</view>
+<view>价格：{{cartItems.price}}</view>数量：
 <text bindtap='reduce' data-index="{{index}}">-</text>
-<text class="input cart-text">{{value}}</text>
+<text class="input cart-text">{{cartItems.value}}</text>
 <text bindtap='add' data-index="{{index}}">+</text>
+
+<view>颜色</view>
+<view wx:for="{{cartItems.color}}" class='fl'>
+  <text class="btn {{curnav==index?'btnatt':''}}" data-index="{{index}}" bindtap='clickatt'>{{item}}</text>
+</view>
+
+ <view style='clear:both'>内存</view>
+  <view wx:for="{{cartItems.neicun}}" class='fl'>
+    <text class='btn'>{{item}}</text>
+  </view> 
+
+  <view wx:for="{{cartItems.img}}">
+  <image src='{{item.image}}'></image>
+  </view>
 
 <view class='dibu'>
   <view class='left'>
     <text bindtap="addcart" class='text'>添加到购物车</text>
   </view>
   <view class='right'>
-     <navigator url="../pay/pay?fid={{id}}&ftitle={{title}}&fimg={{image}}&fprice={{price}}&fvalue={{value}}">
-      <text class='text'>立刻购买</text>
-    </navigator> 
-    <!-- <text class='text' bindtap="gopay">立刻购买</text> -->
+    <!-- <navigator url="../pay/pay?fid={{id}}&ftitle={{title}}&fimg={{image}}&fprice={{price}}&fvalue={{value}}"> -->
+    <text class='text' bindtap='gobuy'>立刻购买</text>
+    <!-- </navigator> -->
   </view>
 </view>

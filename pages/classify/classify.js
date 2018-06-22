@@ -17,6 +17,8 @@ Page({
             Imgone: "https://shopstatic.vivo.com.cn/vivoshop/commodity/51/4151_1496689455875hd_530x530.png",
             Imgtwo: "https://shopstatic.vivo.com.cn/vivoshop/commodity/71/4171_1482112378797_530x530.png",
             selected: true,
+            color: ["白","金"],
+            neicun: ["32g","64g","128g"],
             // img:[
             //   {name:55},
             //   {name:666}
@@ -282,6 +284,16 @@ Page({
     ],
     curNav: 1,
     curIndex: 0
+  },
+  btn: function (e) {
+    var HomeId = e.currentTarget.dataset.id
+    var HomeIndex = e.currentTarget.dataset.index
+    wx.navigateTo({
+      url: '../detail/detail',
+    })
+    var newcate = this.data.cateItems[this.data.curIndex].children[HomeIndex]
+    // console.log(newcate)
+    wx.setStorageSync("newcate", newcate)
   },
 
   //事件处理函数 

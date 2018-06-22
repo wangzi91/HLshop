@@ -5,72 +5,82 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:"",
-    title:"",
-    image:"",
-    price:"",
-    value:"",
-    cartItems:[]
+    curnav:"",
+    // id:"",
+    // title:"",
+    // image:"",
+    // price:"",
+    // value:"",
+    cartItems:[],
+    // color:[]
     
   },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  console.log(options.fid)
-  console.log(options.ftitle)
-  console.log(options.fimg)
-  console.log(options.fprice)
-  console.log(options.fvalue)
+    // console.log(options)
+  // // console.log(options.fid)
+  // // console.log(options.ftitle)
+  // // console.log(options.fimg)
+  // // console.log(options.fprice)
+  // // console.log(options.fvalue)
+  // console.log(options.fcolor)
 
-  this.setData({
-    id: options.fid,
-    title: options.ftitle,
-    image: options.fimg,
-    price: options.fprice,
-    value: options.fvalue,
-  })
-
-
+  // this.setData({
+  //   id: options.fid,
+  //   title: options.ftitle,
+  //   image: options.fimg,
+  //   price: options.fprice,
+  //   value: options.fvalue,
+  //   color: options.fcolor
+  // })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  // onReady: function () {
   
-  },
-  gopay:function(e){
-    wx.navigateTo({
-      url: '../pay/pay'
-    })
-    var cart = {
-      id:this.data.id,
-      title:this.data.title
-    }
-    wx.setStorage({
-      key: "pay",
-      data: cart
-    })
+  // },
+  // gopay:function(e){
+  //   wx.navigateTo({
+  //     url: '../pay/pay'
+  //   })
+  //   var cart = {
+  //     id:this.data.id,
+  //     title:this.data.title
+  //   }
+  //   wx.setStorage({
+  //     key: "pay",
+  //     data: cart
+  //   })
     
+  // },
+  gobuy:function(){
+    wx.navigateTo({
+      url: '../pay/pay',
+    })
   },
+
 
   addcart: function (e) {
     var that = this
     var cartItems = wx.getStorageSync("cartItems") || []
     var exist = cartItems.find(function (el) {
-      return el.id == that.data.id
+      return el.id == that.data.cartItems.id
     })
     if (exist) {
       exist.value = parseInt(exist.value) + 1
     } else {
       cartItems.push({
-        id: this.data.id,
-        title: this.data.title,
-        image: this.data.image,
-        price: this.data.price,
-        value: this.data.value,
+        id: this.data.cartItems.id,
+        title: this.data.cartItems.title,
+        image: this.data.cartItems.image,
+        price: this.data.cartItems.price,
+        value: this.data.cartItems.value,
         selected: true
       })
     }
@@ -82,44 +92,48 @@ Page({
 
   },
   add: function (e) {
-    //  var cartItems = this.data.cartItems   //获取购物车列表
-    // var index = e.currentTarget.dataset.index //获取当前点击事件的下标索引
-    var value = this.data.value  //获取购物车里面的value值
-
-    value++
-    
-    this.setData({
-      value: value
-    });
+    console.log(e)
+    var cartItems = this.data.cartItems   //获取购物车列表
+    var value = this.data.cartItems.value 
+     value++
+     console.log(value)
+     cartItems.value = value
+     this.setData({
+       cartItems: cartItems
+     })
     // this.getsumTotal()
 
-    // wx.setStorageSync("cartItems", cartItems)  //存缓存
+     wx.setStorageSync("newcate", cartItems)  //存缓存
   },
 
   //减
   reduce: function (e) {
-    // var cartItems = this.data.cartItems
-    var value = this.data.value  //获取购物车里面的value值
-
+    var cartItems = this.data.cartItems  //获取购物车列表
+    var value = cartItems.value  //获取购物车里面的value值
     if (value == 1) {
       value--
-      this.data.value.value = 1
+      cartItems.value = 1
     } else {
       value--
-      this.data.value = value;
+      cartItems.value = value;
     }
     this.setData({
-      value: value
+      cartItems: cartItems
     });
     // this.getsumTotal()
-    // wx.setStorageSync("cartItems", cartItems)
+    wx.setStorageSync("newcate", cartItems)
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var cartItems = wx.getStorageSync("newcate")
+    
+    this.setData({
+      cartItems: cartItems
+    })
+     console.log(this.data.cartItems)
   },
 
   /**
@@ -156,4 +170,14 @@ Page({
   onShareAppMessage: function () {
   
   }
+  ,
+  clickatt:function(e){
+    console.log(e)
+    // var addprice = this.data.color.prices
+    // console.log(addprice)
+    this.setData({
+      curnav:e.currentTarget.dataset.index
+    })
+  }
+  
 })

@@ -13,12 +13,10 @@
  <!--如果有数据，才遍历项-->
  <view wx:if="{{cateItems[curIndex].ishaveChild}}">
   <block wx:for="{{cateItems[curIndex].children}}">
-   <view class="nav_right_items">
+   <view class="nav_right_items" catchtap='btn' data-id="{{item.id}}" data-index="{{index}}">
    <!--界面跳转 -->
-    <navigator url="../detail/detail?fid={{item.id}}&fimg={{item.image}}&ftitle={{item.title}}&fprice={{item.price}}&fvalue={{item.value}}">
      <image src="{{item.image}}"></image>
      <text>{{item.title}}</text>
-    </navigator>
    </view>
   </block>
  </view>

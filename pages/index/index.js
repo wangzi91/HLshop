@@ -482,7 +482,30 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+  
+  },
+  gomsdet:function(e){
+    wx.navigateTo({
+      url: '../detail/detail',
+
+    })
+    var HomeIndex = e.currentTarget.dataset.index
     
+    var newcateq = this.data.content[HomeIndex]
+    console.log(newcate)
+    wx.setStorageSync("newcate", newcate)
+  },
+
+  gojqdet: function (e) {
+    wx.navigateTo({
+      url: '../detail/detail',
+
+    })
+    var HomeIndex = e.currentTarget.dataset.index
+
+    var newcate = this.data.contejia[HomeIndex]
+    console.log(newcate)
+    wx.setStorageSync("newcate", newcate)
   },
 
   /**
@@ -495,10 +518,12 @@ Page({
       data: this.data.content,
     })
   },
-  goxsms:function(){
+  goxsms:function(e){
     wx.navigateTo({
       url: '../msdel/msdel',
     })
+
+    
   },
 
   /**

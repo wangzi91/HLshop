@@ -1,16 +1,14 @@
 {
   "pages": [
-    
-    "pages/index/index",
-    "pages/carts/carts",
+      "pages/index/index",
     "pages/classify/classify",
+  
+    "pages/carts/carts",
     "pages/logs/logs",
     "pages/detail/detail",
     "pages/pay/pay",
     "pages/msdel/msdel",
     "pages/user/user"
-    
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,8 +29,7 @@
       {
         "pagePath": "pages/carts/carts",
         "text": "购物车"
-      }
-      ,
+      },
       {
         "pagePath": "pages/user/user",
         "text": "我的"

@@ -27,3 +27,22 @@
   text-align: center;
   font-size: 25rpx;
 }
+.fl{
+  float: left
+}
+.btn{
+  border: 1px solid #cfcfcf;
+  padding: 6rpx 10rpx;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+   margin-right: 20rpx;
+
+}
+.btnatt{
+  border: 1px solid #3385ff;
+  padding: 6rpx 10rpx;
+  font-size: 28rpx;
+  margin-left: 20rpx;
+   margin-right: 20rpx;
+
+}

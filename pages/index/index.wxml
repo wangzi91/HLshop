@@ -12,14 +12,14 @@
   <text bindtap='goxsms'>全部</text>
 </view>
 <view class='miao-neirong' >
-  <view wx:for="{{content}}" class='chlild-m-n' style='background-color:#ffffff'>
+  <view wx:for="{{content}}" class='chlild-m-n' style='background-color:#ffffff' bindtap='gomsdet' data-index="{{index}}">
   <!-- {{content}} -->
-  <navigator url="../detail/detail?fid={{item.id}}&fimg={{item.image}}&ftitle={{item.title}}&fprice={{item.price}}&fvalue={{item.value}}">
+
     <view>
       <image src='{{item.image}}'></image>
     </view>
     <view style='text-align:center'>价格￥{{item.price}}</view>
-</navigator>
+
   </view>
 </view>
 
@@ -28,13 +28,13 @@
   <text>全部</text>
 </view>
 <view class='miao-neirong' >
-  <view wx:for="{{contejia}}" class='chlild-m-n' style='background-color:#ffffff'>
-  <navigator url="../detail/detail?fid={{item.id}}&fimg={{item.image}}&ftitle={{item.title}}&fprice={{item.price}}&fvalue={{item.value}}">
+  <view wx:for="{{contejia}}" class='chlild-m-n' style='background-color:#ffffff' bindtap='gojqdet' data-index="{{index}}">
+
     <view>
       <image src='{{item.image}}'></image>
     </view>
     <view style='text-align:center'>价格￥{{item.price}}</view>
-    </navigator>
+
   </view>
 </view>
 
