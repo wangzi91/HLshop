@@ -46,3 +46,9 @@
    margin-right: 20rpx;
 
 }
+.boxtwo_image{
+  width: 100%;
+  height: auto;
+  display: block;
+  
+}

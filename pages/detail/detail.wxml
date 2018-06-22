@@ -21,7 +21,7 @@
   </view> 
 
   <view wx:for="{{cartItems.img}}">
-  <image src='{{item.image}}'></image>
+  <image src='{{item.image}}' mode="{{item.mode}}" class='boxtwo_image'></image>
   </view>
 
 <view class='dibu'>
@@ -29,8 +29,8 @@
     <text bindtap="addcart" class='text'>添加到购物车</text>
   </view>
   <view class='right'>
-    <!-- <navigator url="../pay/pay?fid={{id}}&ftitle={{title}}&fimg={{image}}&fprice={{price}}&fvalue={{value}}"> -->
+
     <text class='text' bindtap='gobuy'>立刻购买</text>
-    <!-- </navigator> -->
+
   </view>
 </view>
