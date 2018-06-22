@@ -491,7 +491,7 @@ Page({
     })
     var HomeIndex = e.currentTarget.dataset.index
     
-    var newcateq = this.data.content[HomeIndex]
+    var newcate = this.data.content[HomeIndex]
     console.log(newcate)
     wx.setStorageSync("newcate", newcate)
   },
