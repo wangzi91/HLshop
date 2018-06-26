@@ -6,7 +6,8 @@ Page({
    */
   data: {
     cartItems:[],
-    total:""
+    total:"",
+    attr:[]
   },
 
   /**
@@ -66,16 +67,19 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-     
+  onShow: function (e) {
+
      var pay = wx.getStorageSync("newcate")
+     var attr = wx.getStorageSync("attr")
 
     this.setData({
       // cartList: false,
       cartItems:pay,
       // showcart:false
+      attr: attr,
     })
-    console.log(this.data.cartItems)
+ 
+
      this.getsumTotal();
   },
 

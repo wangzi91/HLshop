@@ -1,0 +1,57 @@
+/* pages/allpay/allpay.wxss */
+.allpay-img{
+  width: 100rpx;
+  height: 100rpx;
+}
+.allpay-img image{
+  width: 100%;
+  height: 100%
+}
+.allpay-list{
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between
+}
+.allpay-price{
+  color: red
+}
+.allpay-list-li{
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.allpay-value{
+  font-style: 24rpx;
+  color: #969696;
+  margin-left: 20rpx;
+}
+.car_bot {
+    position: fixed;
+    width: 100%;
+    background-color: #FFF;
+    bottom: 0;
+    border-bottom: 1px solid #E5E5E5;
+    font-size: 14px;
+}
+.car_bot_wrap {
+    padding: 10px;
+    height: 30px;
+    line-height: 30px;
+}
+.car_order_confirm {
+    display: inline-block;
+    float: right;
+    background-color: #3385ff;
+    color: #FFF;
+    border-radius: 3px;
+    width: 80px;
+    text-align: center;
+}
+.car_total_money {
+    display: inline-block;
+    color: #FF0000;
+    margin-left: 5px;
+}

@@ -1,0 +1,22 @@
+<!--pages/allpay/allpay.wxml-->
+<text>pages/allpay/allpay.wxml</text>
+<view wx:for="{{cartItems}}" class='allpay-list'>
+  <view class='allpay-list-li'>
+    <view class='allpay-img'>
+      <image src='{{item.image}}'></image>
+    </view>
+    <view>{{item.title}}</view>
+    <view>{{item.color}}</view>
+    <view>{{item.storge}}</view>
+    <view class='allpay-value'>x{{item.value}}</view>
+  </view>
+  <view class='allpay-price'>{{item.price}}</view>
+</view>
+
+<view class="car_bot">
+	<view class="car_bot_wrap">
+		总价
+		<span class="car_order_confirm" bindtap="toPay">前往支付</span>
+		<span class="car_total_money">¥{{total}}</span>
+	</view>
+</view>

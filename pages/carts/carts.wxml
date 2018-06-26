@@ -14,10 +14,17 @@
       </view>
 
       <view>
-        <view>{{item.title}}</view>
-        <text bindtap='reduce' data-index="{{index}}">-</text>
-        <text class="input cart-text">{{item.value}}</text>
-        <text bindtap='add' data-index="{{index}}">+</text>
+        <view class='cart-attr'>
+          <view>{{item.title}}</view>
+          <view>{{item.color}}</view>
+          <view>{{item.storge}}</view>
+        </view>
+        <view class='cart-v'>
+          <text bindtap='reduce' data-index="{{index}}" class='value-border'>-</text>
+          <text class="input cart-text">{{item.value}}</text>
+          <text bindtap='add' data-index="{{index}}" class='value-border'>+</text>
+        </view>
+
       </view>
       <view>{{item.price}}</view>
     </view>
@@ -31,12 +38,12 @@
   <text class='checkAll'>全选</text>
 
   <view class='cart-pay'>
-    <text class='cart_pay' data-id="{{item.id}}">付款</text>
+    <text class='cart_pay' data-id="{{item.id}}" bindtap='togopay'>付款</text>
   </view>
 
   <view class='cart-sum'>
     <text class='cart_sum'>
-                      <text class='sum_text'>合计：</text>
+     <text class='sum_text'>合计：</text>
     <text class='sum_color'>￥{{total}}元</text>
     </text>
   </view>

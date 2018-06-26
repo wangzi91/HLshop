@@ -1,28 +1,64 @@
 <!--pages/detail/detail.wxml-->
-<view>
-  {{cartItems.title}}
-</view>
+
+
 <view>
   <image src='{{cartItems.Imgone}}' class='logoimg'></image>
 </view>
-<view>价格：{{cartItems.price}}</view>数量：
-<text bindtap='reduce' data-index="{{index}}">-</text>
-<text class="input cart-text">{{cartItems.value}}</text>
-<text bindtap='add' data-index="{{index}}">+</text>
 
-<view>颜色</view>
-<view wx:for="{{cartItems.color}}" class='fl'>
-  <text class="btn {{curnav==index?'btnatt':''}}" data-index="{{index}}" bindtap='clickatt'>{{item}}</text>
+<view class='title'>
+  <view class='c-title'>
+    <view class='c-mr'>{{cartItems.title}}</view>
+    <view class='c-mr'>{{colors}}</view>
+    <view class='c-mr'>{{storages}}</view>
+  </view>
+  <view class="c-titletwo">{{cartItems.titleTwo}}</view>
+  <view class='c-pricetitle'>价格：</view>
+  <view class="c-price">{{cartItems.price}}</view>
 </view>
 
- <view style='clear:both'>内存</view>
-  <view wx:for="{{cartItems.neicun}}" class='fl'>
-    <text class='btn'>{{item}}</text>
-  </view> 
+<view class='c-attr'>
 
-  <view wx:for="{{cartItems.img}}">
-  <image src='{{item.image}}' mode="{{item.mode}}" class='boxtwo_image'></image>
+  <view class='flex-row'>  数量：
+    <text bindtap='reduce' data-index="{{index}}" class='value-border'>-</text>
+    <text class="input cart-text">{{cartItems.value}}</text>
+    <text bindtap='add' data-index="{{index}}" class='value-border'>+</text>
+
   </view>
+
+  <view class="container">
+    <view class="top">颜色：
+      <block wx:for="{{cartItems.classify}}" wx:key="id">
+        <view catchtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}" class="{{curnav ==index?'btnatt':''}}btn">{{item.cate_name}}</view>
+      </block>
+    </view>
+    <view>
+      <view wx:if="{{cartItems.classify[curIndex].ishaveChild}}">
+        <view class="down">内存：
+          <block wx:for="{{cartItems.classify[curIndex].children}}" wx:key="id">
+            <text catchtap='switchDownTab' data-index='{{index}}' class="{{curnav1 ==index?'btnatt':''}}btn" data-index="{{index}}">{{item.name}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+<view class='boxtwo'>
+  <view class="boxtwo-tab-nav {{HomeIndex == 0 ?'on':''}}" bindtap="boxtwo" data-index="0">商品详情</view>
+  <view class="boxtwo-tab-nav {{HomeIndex == 1 ?'on':''}}" bindtap="boxtwo" data-index="1">产品参数
+  </view>
+  <view class="boxtwo-content" class='img_one'>
+    <view wx:if="{{HomeIndex == 0}}" wx:for="{{cartItems.img}}" wx:for-item="img">
+      <image src='{{img.image}}' mode="{{img.mode}}" class='boxtwo_image'></image>
+    </view>
+    <view wx:if="{{HomeIndex == 1}}" class='product'>产品参数</view>
+  </view>
+</view>
+
+<!-- <view wx:for="{{cartItems.img}}">
+  <image src='{{item.image}}' mode="{{item.mode}}" class='boxtwo_image'></image>
+</view> -->
 
 <view class='dibu'>
   <view class='left'>

@@ -1,16 +1,21 @@
 <!--pages/pay/pay.wxml-->
 
 
- <view>{{cartItems.title}}</view>
+<view>{{cartItems.title}}</view>
+<view>{{attr.color}}</view>
+<view>{{attr.storge}}</view>
 <view>
   <image src='{{cartItems.image}}'></image>
 </view>
-<view>{{cartItems.price}}</view>数量：
-<text bindtap='reduce' data-index="{{index}}">-</text>
-<text class="input cart-text">{{cartItems.value}}</text>
-<text bindtap='add' data-index="{{index}}">+</text>
+<view>{{cartItems.price}}</view>
+<view class='flex-row'>数量：
+  <text bindtap='reduce' data-index="{{index}}" class='value-border'>-</text>
+  <text class="input cart-text">{{cartItems.value}}</text>
+  <text bindtap='add' data-index="{{index}}" class='value-border'>+</text>
+</view>
+
 <view>总价：￥{{total}}</view>
-<button>微信支付</button> 
+<button>微信支付</button>
 
 <!-- <view wx:for="{{cartItems}}">
   {{item.title}}

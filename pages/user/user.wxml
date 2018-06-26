@@ -1,5 +1,15 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
-<view wx:for="{{color}}">
-{{item}}
+<view class="personal_info">
+<button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" wx:if="{{hidebut}}">登录</button> 
+	<view class="photo_wrap">
+		<image src="{{image}}" class="photo"></image>
+	</view>
+	<view class="nickname">
+		{{nickName}}
+	</view>
+</view>
+<view class="wode_item_wrap">
+	<view class="wode_item" wx:for="{{mode}}">
+		{{item}}
+		<span class="arrow_wrap"></span>
+	</view>
 </view>

@@ -5,85 +5,81 @@ Page({
    * 页面的初始数据
    */
   data: {
-    curnav:"",
-    // id:"",
-    // title:"",
-    // image:"",
-    // price:"",
-    // value:"",
     cartItems:[],
-    // color:[]
-    
+    choosecon:[],
+    curNav: 1,
+    curIndex: 0,
+    storages:"",
+    colors:"",
+    HomeIndex: 0 
   },
-
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options)
-  // // console.log(options.fid)
-  // // console.log(options.ftitle)
-  // // console.log(options.fimg)
-  // // console.log(options.fprice)
-  // // console.log(options.fvalue)
-  // console.log(options.fcolor)
 
-  // this.setData({
-  //   id: options.fid,
-  //   title: options.ftitle,
-  //   image: options.fimg,
-  //   price: options.fprice,
-  //   value: options.fvalue,
-  //   color: options.fcolor
-  // })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  // onReady: function () {
-  
-  // },
-  // gopay:function(e){
-  //   wx.navigateTo({
-  //     url: '../pay/pay'
-  //   })
-  //   var cart = {
-  //     id:this.data.id,
-  //     title:this.data.title
-  //   }
-  //   wx.setStorage({
-  //     key: "pay",
-  //     data: cart
-  //   })
-    
-  // },
   gobuy:function(){
+    if (this.data.colors == "" || this.data.storages == "") {
+      wx.showToast({
+        title: "请填写商品属性！",
+        duration: 1000,
+        icon: "loading"
+      })
+      return false
+    }
     wx.navigateTo({
       url: '../pay/pay',
     })
+    var attr = {
+      color: this.data.colors,
+      storge: this.data.storages
+    }
+  
+    wx.setStorageSync("attr", attr)
   },
-
-
   addcart: function (e) {
+    if (this.data.colors == "" || this.data.storages == ""){
+      wx.showToast({
+        title: "请填写商品属性！",
+        duration: 1000,
+        icon:"loading"
+      })
+      return false
+      
+    }
     var that = this
     var cartItems = wx.getStorageSync("cartItems") || []
-    var exist = cartItems.find(function (el) {
-      return el.id == that.data.cartItems.id
+    // var exist = cartItems.find(function (el) {
+    //   return el.id == that.data.cartItems.id
+    // })
+    // if (exist) {
+    //   exist.value = parseInt(exist.value) + 1
+    // } else {
+    //   cartItems.push({
+    //     id: this.data.cartItems.id,
+    //     title: this.data.cartItems.title,
+    //     image: this.data.cartItems.image,
+    //     price: this.data.cartItems.price,
+    //     value: this.data.cartItems.value,
+    //     selected: true,
+    //     color:this.data.colors,
+    //     storge: this.data.storages
+    //   })
+    // }
+    cartItems.push({
+      id: this.data.cartItems.id,
+      title: this.data.cartItems.title,
+      image: this.data.cartItems.image,
+      price: this.data.cartItems.price,
+      value: this.data.cartItems.value,
+      selected: true,
+      color: this.data.colors,
+      storge: this.data.storages
     })
-    if (exist) {
-      exist.value = parseInt(exist.value) + 1
-    } else {
-      cartItems.push({
-        id: this.data.cartItems.id,
-        title: this.data.cartItems.title,
-        image: this.data.cartItems.image,
-        price: this.data.cartItems.price,
-        value: this.data.cartItems.value,
-        selected: true
-      })
-    }
+
+
+
     wx.showToast({
       title: "加入购物车成功！",
       duration: 1000
@@ -171,13 +167,39 @@ Page({
   
   }
   ,
-  clickatt:function(e){
-    console.log(e)
-    // var addprice = this.data.color.prices
-    // console.log(addprice)
+  switchRightTab: function (e) {
+    var id = e.currentTarget.dataset.index,
+      index = parseInt(e.target.dataset.index);
+    var color = this.data.cartItems.classify[id].cate_name
+    console.log(color)
     this.setData({
-      curnav:e.currentTarget.dataset.index
+      curnav: id,
+      curIndex: index,
+      colors: color
     })
-  }
+  },
+  switchDownTab: function (e) {
+
+    var cartItems = this.data.cartItems   //获取购物车列表  
+    var index = e.currentTarget.dataset.index
+    var storage = this.data.cartItems.classify[this.data.curIndex].children[index].name
+    console.log(storage)
+    var price = this.data.cartItems.classify[this.data.curIndex].children[index].price
+    console.log(price)
+    cartItems.price = price
+    this.setData({
+      curnav1: index,
+      cartItems: cartItems,
+      storages:storage,
+     
+    })
+    wx.setStorageSync("newcate", cartItems)
+  },
+  boxtwo: function (e) {
+    var index = parseInt(e.currentTarget.dataset.index)
+    this.setData({
+      HomeIndex: index
+    })
+  },
   
 })

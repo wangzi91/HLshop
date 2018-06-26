@@ -1,14 +1,14 @@
 {
   "pages": [
-      "pages/index/index",
-    "pages/classify/classify",
-  
+    "pages/user/user",
     "pages/carts/carts",
+    "pages/allpay/allpay",
+    "pages/classify/classify",
+    "pages/index/index",
     "pages/logs/logs",
     "pages/detail/detail",
     "pages/pay/pay",
-    "pages/msdel/msdel",
-    "pages/user/user"
+    "pages/msdel/msdel"
   ],
   "window": {
     "backgroundTextStyle": "light",

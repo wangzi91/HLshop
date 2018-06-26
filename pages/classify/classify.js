@@ -17,8 +17,77 @@ Page({
             Imgone: "https://shopstatic.vivo.com.cn/vivoshop/commodity/51/4151_1496689455875hd_530x530.png",
             Imgtwo: "https://shopstatic.vivo.com.cn/vivoshop/commodity/71/4171_1482112378797_530x530.png",
             selected: true,
-            color: ["白","金"],
-            neicun: ["32g","64g","128g"],
+            classify: [{
+       
+              cate_name: "白色",
+              ishaveChild: true,
+              children: [{
+              
+                name: '32g',
+                price: "3400"
+              },
+              {
+               
+                name: '64g',
+                price: "8000"
+              },
+              {
+               
+                name: '128g',
+                price: "9000"
+              },
+              ]
+            },
+            {
+             
+              cate_name: "金色",
+              ishaveChild: true,
+              children: [{
+            
+                name: '32g',
+                price: "3400"
+
+              },
+              {
+              
+                name: '64g',
+                price: "8000"
+
+              },
+              {
+               
+                name: '128g',
+                price: "9000"
+              },
+
+              ]
+            },
+            {
+              cate_name: "黑色",
+              ishaveChild: true,
+              children: [{
+               
+                name: '32g',
+                price: "3400"
+              },
+              {
+               
+                name: '64g',
+                price: "8000"
+
+              },
+              {
+             
+                name: '128g',
+                price: "9000"
+              },
+              ]
+            },
+            ],
+            
+            // color: ["白","金"],
+            // neicun: ["32g","64g","128g"],
+            // rprice:["2250","3500","4600"],
             // img:[
             //   {name:55},
             //   {name:666}
@@ -49,6 +118,73 @@ Page({
             Imgone: "https://shopstatic.vivo.com.cn/vivoshop/commodity/95/4495_1509454714610hd_530x530.png",
             Imgtwo: "https://shopstatic.vivo.com.cn/vivoshop/commodity/95/4495_1509454706314hd_530x530.png",
             selected: true,
+            classify: [{
+
+              cate_name: "白色",
+              ishaveChild: true,
+              children: [{
+
+                name: '32g',
+                price: "3400"
+              },
+              {
+
+                name: '64g',
+                price: "8000"
+              },
+              {
+
+                name: '128g',
+                price: "9000"
+              },
+              ]
+            },
+            {
+
+              cate_name: "金色",
+              ishaveChild: true,
+              children: [{
+
+                name: '32g',
+                price: "3400"
+
+              },
+              {
+
+                name: '64g',
+                price: "8000"
+
+              },
+              {
+
+                name: '128g',
+                price: "9000"
+              },
+
+              ]
+            },
+            {
+              cate_name: "黑色",
+              ishaveChild: true,
+              children: [{
+
+                name: '32g',
+                price: "3400"
+              },
+              {
+
+                name: '64g',
+                price: "8000"
+
+              },
+              {
+
+                name: '128g',
+                price: "9000"
+              },
+              ]
+            },
+            ],
             img: [
               {
                 image: "https://shopstatic.vivo.com.cn/vivoshop/commodity/20171031/20171031232228644662_original.jpg",
@@ -134,6 +270,73 @@ Page({
             Imgone: "https://shopstatic.vivo.com.cn/vivoshop/commodity/45/4545_1511863443248hd_530x530.png",
             Imgtwo: "https://shopstatic.vivo.com.cn/vivoshop/commodity/45/4545_1511863450036hd_530x530.png",
             selected: true,
+            classify: [{
+
+              cate_name: "白色",
+              ishaveChild: true,
+              children: [{
+
+                name: '32g',
+                price: "3400"
+              },
+              {
+
+                name: '64g',
+                price: "8000"
+              },
+              {
+
+                name: '128g',
+                price: "9000"
+              },
+              ]
+            },
+            {
+
+              cate_name: "金色",
+              ishaveChild: true,
+              children: [{
+
+                name: '32g',
+                price: "3400"
+
+              },
+              {
+
+                name: '64g',
+                price: "8000"
+
+              },
+              {
+
+                name: '128g',
+                price: "9000"
+              },
+
+              ]
+            },
+            {
+              cate_name: "黑色",
+              ishaveChild: true,
+              children: [{
+
+                name: '32g',
+                price: "3400"
+              },
+              {
+
+                name: '64g',
+                price: "8000"
+
+              },
+              {
+
+                name: '128g',
+                price: "9000"
+              },
+              ]
+            },
+            ],
             img: [
               {
                 image: "https://shopstatic.vivo.com.cn/vivoshop/commodity/20171130/20171130145223121421_original.jpg",
@@ -171,6 +374,69 @@ Page({
             Imgone: "https://shopstatic.vivo.com.cn/vivoshop/commodity/66/4266_1496689781362hd_530x530.png",
             Imgtwo: "https://shopstatic.vivo.com.cn/vivoshop/commodity/66/4266_1500026039430hd_530x530.png",
             selected: true,
+            classify: [{
+              cate_name: "白色",
+              ishaveChild: true,
+              children: [{
+                name: '32g',
+                price: "3400"
+              },
+              {
+                name: '64g',
+                price: "8000"
+              },
+              {
+                name: '128g',
+                price: "9000"
+              },
+              ]
+            },
+            {
+
+              cate_name: "金色",
+              ishaveChild: true,
+              children: [{
+
+                name: '32g',
+                price: "3400"
+
+              },
+              {
+
+                name: '64g',
+                price: "8000"
+
+              },
+              {
+
+                name: '128g',
+                price: "9000"
+              },
+
+              ]
+            },
+            {
+              cate_name: "黑色",
+              ishaveChild: true,
+              children: [{
+
+                name: '32g',
+                price: "3400"
+              },
+              {
+
+                name: '64g',
+                price: "8000"
+
+              },
+              {
+
+                name: '128g',
+                price: "9000"
+              },
+              ]
+            },
+            ],
             img: [
               {
                 image: "https://shopstatic.vivo.com.cn/vivoshop/commodity/20171115/20171115105005767122_original.jpg",
@@ -251,6 +517,73 @@ Page({
         cate_id: 3,
         cate_name: "香水",
         ishaveChild: true,
+        classify: [{
+
+          cate_name: "白色",
+          ishaveChild: true,
+          children: [{
+
+            name: '32g',
+            price: "3400"
+          },
+          {
+
+            name: '64g',
+            price: "8000"
+          },
+          {
+
+            name: '128g',
+            price: "9000"
+          },
+          ]
+        },
+        {
+
+          cate_name: "金色",
+          ishaveChild: true,
+          children: [{
+
+            name: '32g',
+            price: "3400"
+
+          },
+          {
+
+            name: '64g',
+            price: "8000"
+
+          },
+          {
+
+            name: '128g',
+            price: "9000"
+          },
+
+          ]
+        },
+        {
+          cate_name: "黑色",
+          ishaveChild: true,
+          children: [{
+
+            name: '32g',
+            price: "3400"
+          },
+          {
+
+            name: '64g',
+            price: "8000"
+
+          },
+          {
+
+            name: '128g',
+            price: "9000"
+          },
+          ]
+        },
+        ],
         children:
         [
           {

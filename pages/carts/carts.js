@@ -152,6 +152,11 @@ Page({
     this.setData({
       cartItems: cartItems
     });
+    wx.showToast({
+      title: "删除成功！",
+      duration: 1000,
+    
+    })
     if (cartItems.length == 0) {
       console.log("购物车空")
       this.setData({
@@ -225,4 +230,13 @@ Page({
       total: sum
     })
   },
+  togopay:function(){
+    wx.navigateTo({
+      url: '../allpay/allpay',
+    })
+    var total = this.data.total
+    console.log(total)
+    wx.setStorageSync("total", total)
+  }
+  
 })
