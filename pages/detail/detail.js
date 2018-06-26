@@ -23,8 +23,8 @@ Page({
     if (this.data.colors == "" || this.data.storages == "") {
       wx.showToast({
         title: "请填写商品属性！",
-        duration: 1000,
-        icon: "loading"
+        duration: 1200,
+        icon: "none"
       })
       return false
     }
@@ -42,8 +42,8 @@ Page({
     if (this.data.colors == "" || this.data.storages == ""){
       wx.showToast({
         title: "请填写商品属性！",
-        duration: 1000,
-        icon:"loading"
+        duration: 1200,
+        icon:"none"
       })
       return false
       

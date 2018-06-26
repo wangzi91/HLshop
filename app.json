@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
     "pages/user/user",
     "pages/carts/carts",
     "pages/allpay/allpay",
     "pages/classify/classify",
-    "pages/index/index",
     "pages/logs/logs",
-    "pages/detail/detail",
     "pages/pay/pay",
     "pages/msdel/msdel"
   ],

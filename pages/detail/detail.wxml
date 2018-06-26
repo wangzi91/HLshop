@@ -17,23 +17,21 @@
 </view>
 
 <view class='c-attr'>
-
-  <view class='flex-row'>  数量：
-    <text bindtap='reduce' data-index="{{index}}" class='value-border'>-</text>
+  <view class='flex-row margin '>  数量：
+    <text bindtap='reduce' data-index="{{index}}" class='value-border attr-ma'>-</text>
     <text class="input cart-text">{{cartItems.value}}</text>
     <text bindtap='add' data-index="{{index}}" class='value-border'>+</text>
-
   </view>
 
   <view class="container">
-    <view class="top">颜色：
+    <view class="top margin"><view class='att-ma'>颜色：</view>
       <block wx:for="{{cartItems.classify}}" wx:key="id">
         <view catchtap="switchRightTab" data-index="{{index}}" data-id="{{item.cate_id}}" class="{{curnav ==index?'btnatt':''}}btn">{{item.cate_name}}</view>
       </block>
     </view>
     <view>
       <view wx:if="{{cartItems.classify[curIndex].ishaveChild}}">
-        <view class="down">内存：
+        <view class="down margin">内存：
           <block wx:for="{{cartItems.classify[curIndex].children}}" wx:key="id">
             <text catchtap='switchDownTab' data-index='{{index}}' class="{{curnav1 ==index?'btnatt':''}}btn" data-index="{{index}}">{{item.name}}</text>
           </block>

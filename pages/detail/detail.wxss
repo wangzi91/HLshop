@@ -77,17 +77,20 @@ float: left;
 }
 .c-title{
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  margin-bottom: 6rpx
 }
 .c-mr{
   margin-right: 20rpx
 }
 .c-titletwo{
   font-size: 28rpx;
-  color: #666
+  color: #666;
+    margin-bottom: 6rpx
 }
 .title{
-  background-color: white
+  background-color: white;
+  margin-top: 8rpx;
 }
 .boxtwo-tab-nav{
     display: inline-block;
@@ -121,6 +124,13 @@ float: left;
 .c-attr{
   background-color: white;
   margin-top: 20rpx;
-  height: 174rpx
+  height: 212rpx;
+  padding-top: 12rpx
 
+}
+.attr-ma{
+  margin-left: 33rpx
+}
+.att-ma{
+  margin-right: 13rpx
 }
