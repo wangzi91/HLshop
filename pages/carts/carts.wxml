@@ -26,7 +26,7 @@
         </view>
 
       </view>
-      <view>{{item.price}}</view>
+      <view class='pricecolor'>{{item.price}}元</view>
     </view>
     <view class="del" catchtap="del" data-index="{{index}}">删除</view>
   </view>
@@ -38,7 +38,7 @@
   <text class='checkAll'>全选</text>
 
   <view class='cart-pay'>
-    <text class='cart_pay' data-id="{{item.id}}" bindtap='togopay'>付款</text>
+    <text class='cart_pay' data-id="{{item.id}}" bindtap='togopay'>结算（{{cartlength}}）</text>
   </view>
 
   <view class='cart-sum'>

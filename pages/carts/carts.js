@@ -150,8 +150,10 @@ Page({
     var index = e.currentTarget.dataset.index  //获取当前点击事件的下标索引
     cartItems.splice(index, 1)
     this.setData({
-      cartItems: cartItems
+      cartItems: cartItems,
+      cartlength: cartItems.length,
     });
+
     wx.showToast({
       title: "删除成功！",
       duration: 1000,
@@ -176,37 +178,30 @@ Page({
   },
   onShow: function () {
     var cartItems = wx.getStorageSync("cartItems")
-
     this.setData({
-      // cartList: false,
       cartItems: cartItems,
-      // showcart:false
     })
     console.log(this.data.cartItems)
-    if (cartItems.length >= 1) {
-     
+    if (cartItems.length >= 1) { 
       this.setData({
          cartList: false,
-        // cartItems: cartItems,
-        // // showcart:false
          showtot: true
       })
     }
-
     if (cartItems.length == 0 ) {
       console.log("购物车空")
       this.setData({
         cartList: true,
-        // cartItems: cartItems,
-        // // showcart:false
         showtot:false
       })
     }
-
-
      this.getsumTotal()
+     this.setData({
+       cartlength: cartItems.length,
+     })
      
-
+     
+    console.log(cartItems.length)
   },
 
   go: function (e) {

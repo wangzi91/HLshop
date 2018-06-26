@@ -22,3 +22,6 @@ page{
 .margin{
   margin-bottom: 16rpx;
 }
+.pricecolor{
+  color: red
+}
