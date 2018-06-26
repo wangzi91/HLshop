@@ -96,5 +96,15 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  godetail:function(e){
+    wx.navigateTo({
+      url: '../detail/detail',
+    })
+    var HomeIndex = e.currentTarget.dataset.index
+
+    var newcate = this.data.xsmscon[HomeIndex]
+    console.log(newcate)
+    wx.setStorageSync("newcate", newcate)
   }
 })
